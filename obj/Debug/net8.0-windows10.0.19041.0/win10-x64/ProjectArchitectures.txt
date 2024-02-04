@@ -1,0 +1,1 @@
+C:\Git\CycleInstructor\CycleInstructor.csproj;x64
