@@ -1,0 +1,9 @@
+C:\Git\CycleInstructor\bin\Debug\CycleInstructor.exe.config
+C:\Git\CycleInstructor\bin\Debug\CycleInstructor.exe
+C:\Git\CycleInstructor\bin\Debug\CycleInstructor.pdb
+C:\Git\CycleInstructor\obj\Debug\CycleInstructor.csproj.AssemblyReference.cache
+C:\Git\CycleInstructor\obj\Debug\CycleInstructor.Properties.Resources.resources
+C:\Git\CycleInstructor\obj\Debug\CycleInstructor.csproj.GenerateResource.cache
+C:\Git\CycleInstructor\obj\Debug\CycleInstructor.csproj.CoreCompileInputs.cache
+C:\Git\CycleInstructor\obj\Debug\CycleInstructor.exe
+C:\Git\CycleInstructor\obj\Debug\CycleInstructor.pdb
