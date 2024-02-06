@@ -1,7 +1,9 @@
 ﻿using System;
+using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using NAudio.Wave;
-using NAudio.Wave.SampleProviders;
+using System.Text.Json;
 
 namespace CycleInstructor
 {
@@ -29,6 +31,7 @@ namespace CycleInstructor
             {
                 // use the filename only without the path
                 labelTrainingFile.Text = System.IO.Path.GetFileNameWithoutExtension(openFileDialog.FileName);
+
             }
             else
             {
@@ -55,16 +58,17 @@ namespace CycleInstructor
                 audioFile = new AudioFileReader(@"C:\Users\mikeb\OneDrive - Compower.org\music\_CycleMusic\_AudacityProjectFiles\MyFirstSpinningPlaylist.mp3");
                 outputDevice.Init(audioFile);
             }
-            outputDevice.Play();
+
+            if (this.outputDevice.PlaybackState == PlaybackState.Stopped || this.outputDevice.PlaybackState == PlaybackState.Paused)
+            {
+                outputDevice.Play();
+            } else if (this.outputDevice.PlaybackState == PlaybackState.Playing)
+            {
+                outputDevice.Pause();
+            }
+
         }
 
-        private void OnButtonPlayClick(object sender, EventArgs args)
-        {
-        }
-        private void OnButtonStopClick(object sender, EventArgs args)
-        {
-            outputDevice?.Stop();
-        }
         private void OnPlaybackStopped(object sender, StoppedEventArgs args)
         {
             outputDevice.Dispose();
@@ -72,5 +76,13 @@ namespace CycleInstructor
             audioFile.Dispose();
             audioFile = null;
         }
+
+        public class Training 
+        {
+            public string name;
+            public string audioFile;
+            public Array[] stages;
+        }
+
     }
 }
